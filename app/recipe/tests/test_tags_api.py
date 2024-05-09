@@ -40,7 +40,7 @@ class PublicTagsApiTests(TestCase):
 
 
 class PrivateTagsApiTests(TestCase):
-    """Test authenticated API requestes."""
+    """Test authenticated API requests."""
 
     def setUp(self):
         self.user = create_user()
@@ -78,7 +78,7 @@ class PrivateTagsApiTests(TestCase):
 
         payload = {'name': 'Dessert'}
         url = detail_url(tag.id)
-        res = self.client.patch(url,payload)
+        res = self.client.patch(url, payload)
 
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         tag.refresh_from_db()
