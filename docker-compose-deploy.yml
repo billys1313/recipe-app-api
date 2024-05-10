@@ -1,5 +1,4 @@
 #version: "3.9"
-
 services:
   app:
     build:
@@ -28,7 +27,7 @@ services:
       - POSTGRES_PASSWORD=${DB_PASS}
 
   proxy:
-    build: 
+    build:
       context: ./proxy
     restart: always
     depends_on:
